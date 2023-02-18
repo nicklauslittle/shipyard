@@ -64,6 +64,7 @@ function Invoke-PwrScript($pkg) {
 	Install-PwrPackage
 	# pwr shell $name-$version
 	Write-Output "shipyard: $($PwrPackageConfig.Name) v$($PwrPackageConfig.Version) is $(if ($PwrPackageConfig.UpToDate) { 'UP-TO-DATE' } else { 'OUT-OF-DATE' })"
+	Test-PwrPackageInstall
 	if (-not $PwrPackageConfig.UpToDate) {
 		Test-PwrPackageInstall
 	}
